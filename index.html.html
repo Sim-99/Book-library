@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Library System</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <h1>Library System</h1>
+    <!-- Adding search bar  -->
+    
+<div id="search-bar">
+    <input type="text" id="search-input" placeholder="Search by title...">
+    <button onclick="searchBooks()">Search</button>
+    <button onclick="resetSearch()">Reset</button>
+</div>
+<div id="search-notification" class="notification"></div>
+
+    <div id="library">
+        <h2>Available Books</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>ISBN</th>
+                    <th>Year</th>
+                    <th>Genre</th>
+                    <th>Quantity</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="book-list">
+                <!-- Books will be dynamically added here -->
+            </tbody>
+        </table>
+    </div>
+
+    <div id="borrowed-books">
+        <h2>Borrowed Books</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Due Date</th>
+                    <th>Fine</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="borrowed-book-list">
+                <!-- Borrowed books will be dynamically added here -->
+            </tbody>
+        </table>
+    </div>
+    <div id="notifications">
+        <div id="edit-notification" class="notification"></div>
+        <div id="delete-notification" class="notification"></div>
+    </div>
+
+    <!--function is responsible for adding the new book to the library array when the "Add Book" button is clicked -->
+<div id="add-book">
+    <h2>Add a New Book</h2>
+    <form id="add-book-form">
+        <label for="new-title">Title:</label>
+        <input type="text" id="new-title" required><br>
+
+        <label for="new-author">Author:</label>
+        <input type="text" id="new-author" required><br>
+
+        <label for="new-isbn">ISBN:</label>
+        <input type="text" id="new-isbn" required><br>
+
+        <label for="new-year">Year:</label>
+        <input type="number" id="new-year" required><br>
+
+        <label for="new-genre">Genre:</label>
+        <input type="text" id="new-genre" required><br>
+
+        <label for="new-quantity">Quantity:</label>
+        <input type="number" id="new-quantity" required><br>
+
+        <button type="button" onclick="addNewBook()">Add Book</button>
+    </form>
+</div>
+
+<!--Set from for edit button-->
+<div id="edit-form-container">
+    <h2>Edit Book</h2>
+    <form id="edit-form">
+        <label for="edit-title">Title:</label>
+        <input type="text" id="edit-title" required><br>
+
+        <label for="edit-author">Author:</label>
+        <input type="text" id="edit-author" required><br>
+
+        <label for="edit-isbn">ISBN:</label>
+        <input type="text" id="edit-isbn" required><br>
+
+        <label for="edit-year">Year:</label>
+        <input type="number" id="edit-year" required><br>
+
+        <label for="edit-genre">Genre:</label>
+        <input type="text" id="edit-genre" required><br>
+
+        <label for="edit-quantity">Quantity:</label>
+        <input type="number" id="edit-quantity" required><br>
+
+        <button type="button" onclick="saveEdit()">Save</button>
+        <button type="button" onclick="cancelEdit()">Cancel</button>
+    </form>
+</div>
+<!-- ... (rest of the HTML code) ... -->
+
+
+
+    <script src="script.js"></script>
+</body>
+</html>
